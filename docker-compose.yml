@@ -1,0 +1,28 @@
+version: "3"
+services:
+  ldap:
+    image: osixia/openldap:1.3.0
+    hostname: ldap
+    container_name: ldap
+    environment:
+      LDAP_ORGANISATION: "Confluent"
+      LDAP_DOMAIN: "confluent.io"
+    ports:
+      - "389:389"
+      - "636:636"
+    volumes:
+      - "$PWD/ldif:/container/service/slapd/assets/config/bootstrap/ldif/custom"
+    command: "--copy-service"
+
+  phpldapadmin:
+    container_name: phpldapadmin
+    image: osixia/phpldapadmin:stable
+    ports:
+      - "8080:80"
+    environment:
+      - PHPLDAPADMIN_HTTPS="false"
+      - PHPLDAPADMIN_LDAP_HOSTS=ldap
+    links:
+      - ldap
+    depends_on:
+      - ldap
