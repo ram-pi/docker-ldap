@@ -1,0 +1,20 @@
+dn: cn=alice,ou=users,dc=confluent,dc=io
+objectClass: person
+objectClass: top
+cn: alice
+sn: alice
+userPassword: alice-secret
+
+dn: cn=charlie,ou=users,dc=confluent,dc=io
+objectClass: person
+objectClass: top
+cn: chalrie
+sn: chalrie
+userPassword: chalrie-secret
+
+dn: cn=superUser,ou=users,dc=confluent,dc=io
+objectClass: person
+objectClass: top
+cn: superUser
+sn: superUser
+userPassword: superUser

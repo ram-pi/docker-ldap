@@ -1,0 +1,13 @@
+dn: cn=admins,ou=groups,dc=confluent,dc=io
+objectClass: groupOfNames
+objectClass: top
+cn: admins
+member: cn=alice,ou=users,dc=confluent,dc=io
+ou: Groups
+
+dn: cn=viewers,ou=groups,dc=confluent,dc=io
+objectClass: groupOfNames
+objectClass: top
+cn: viewers
+member: cn=charlie,ou=users,dc=confluent,dc=io
+ou: Groups

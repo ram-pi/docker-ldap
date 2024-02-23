@@ -5,4 +5,3 @@ ou: Users
 dn: ou=groups,dc=confluent,dc=io
 objectClass: organizationalUnit
 ou: Groups
-
