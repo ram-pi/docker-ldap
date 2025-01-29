@@ -246,6 +246,7 @@
         "containerId" : "50047554-93a9-49c1-bfc8-a85cfcdc689f",
         "attributes" : { }
       } ],
+      "c3_sso_login" : [ ],
       "security-admin-console" : [ ],
       "127.0.0.1.nip.io" : [ ],
       "admin-cli" : [ ],
@@ -385,8 +386,8 @@
     "emailVerified" : false,
     "attributes" : {
       "LDAP_ENTRY_DN" : [ "cn=alice,ou=users,dc=confluent,dc=io" ],
-      "modifyTimestamp" : [ "20250128212412Z" ],
-      "createTimestamp" : [ "20250128212412Z" ],
+      "createTimestamp" : [ "20250129095010Z" ],
+      "modifyTimestamp" : [ "20250129095010Z" ],
       "LDAP_ID" : [ "alice" ]
     },
     "origin" : "bqkir9JRSzCqXENas57N5g",
@@ -408,9 +409,9 @@
     "emailVerified" : false,
     "attributes" : {
       "LDAP_ENTRY_DN" : [ "cn=charlie,ou=users,dc=confluent,dc=io" ],
-      "createTimestamp" : [ "20250128212412Z" ],
       "LDAP_ID" : [ "chalrie" ],
-      "modifyTimestamp" : [ "20250128212412Z" ]
+      "modifyTimestamp" : [ "20250129095010Z" ],
+      "createTimestamp" : [ "20250129095010Z" ]
     },
     "origin" : "bqkir9JRSzCqXENas57N5g",
     "createdTimestamp" : 1738099495860,
@@ -431,9 +432,9 @@
     "emailVerified" : false,
     "attributes" : {
       "LDAP_ENTRY_DN" : [ "cn=superUser,ou=users,dc=confluent,dc=io" ],
-      "modifyTimestamp" : [ "20250128212412Z" ],
+      "createTimestamp" : [ "20250129095010Z" ],
       "LDAP_ID" : [ "superUser" ],
-      "createTimestamp" : [ "20250128212412Z" ]
+      "modifyTimestamp" : [ "20250129095010Z" ]
     },
     "origin" : "bqkir9JRSzCqXENas57N5g",
     "createdTimestamp" : 1738099495866,
@@ -485,6 +486,7 @@
       "realm_client" : "false",
       "oidc.ciba.grant.enabled" : "false",
       "backchannel.logout.session.required" : "true",
+      "post.logout.redirect.uris" : "+",
       "oauth2.device.authorization.grant.enabled" : "false",
       "backchannel.logout.revoke.offline.tokens" : "false"
     },
@@ -639,6 +641,45 @@
     "nodeReRegistrationTimeout" : 0,
     "defaultClientScopes" : [ ],
     "optionalClientScopes" : [ ]
+  }, {
+    "id" : "fba5db22-7d0b-4503-8d3d-2918d0eab282",
+    "clientId" : "c3_sso_login",
+    "name" : "",
+    "description" : "",
+    "rootUrl" : "",
+    "adminUrl" : "",
+    "baseUrl" : "",
+    "surrogateAuthRequired" : false,
+    "enabled" : true,
+    "alwaysDisplayInConsole" : false,
+    "clientAuthenticatorType" : "client-secret",
+    "secret" : "tNaIzc3nd3MjHZXmvHLq3ya5mUB9HDuf",
+    "redirectUris" : [ "http://127.0.0.1:9021/api/metadata/security/1.0/oidc/authorization-code/callback", "http://control-center:9021/api/metadata/security/1.0/oidc/authorization-code/callback", "http://192.168.1.38:9021/api/metadata/security/1.0/oidc/authorization-code/callback", "http://localhost:9021/api/metadata/security/1.0/oidc/authorization-code/callback" ],
+    "webOrigins" : [ "/*" ],
+    "notBefore" : 0,
+    "bearerOnly" : false,
+    "consentRequired" : false,
+    "standardFlowEnabled" : true,
+    "implicitFlowEnabled" : false,
+    "directAccessGrantsEnabled" : true,
+    "serviceAccountsEnabled" : false,
+    "publicClient" : false,
+    "frontchannelLogout" : true,
+    "protocol" : "openid-connect",
+    "attributes" : {
+      "realm_client" : "false",
+      "oidc.ciba.grant.enabled" : "false",
+      "client.secret.creation.time" : "1738144388",
+      "backchannel.logout.session.required" : "true",
+      "post.logout.redirect.uris" : "+",
+      "oauth2.device.authorization.grant.enabled" : "true",
+      "backchannel.logout.revoke.offline.tokens" : "false"
+    },
+    "authenticationFlowBindingOverrides" : { },
+    "fullScopeAllowed" : true,
+    "nodeReRegistrationTimeout" : -1,
+    "defaultClientScopes" : [ "web-origins", "acr", "profile", "roles", "basic", "email" ],
+    "optionalClientScopes" : [ "address", "phone", "organization", "offline_access", "microprofile-jwt" ]
   }, {
     "id" : "50047554-93a9-49c1-bfc8-a85cfcdc689f",
     "clientId" : "realm-management",
@@ -1415,7 +1456,7 @@
       "subType" : "anonymous",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-full-name-mapper", "saml-role-list-mapper", "saml-user-property-mapper", "oidc-address-mapper", "oidc-usermodel-attribute-mapper", "oidc-usermodel-property-mapper", "oidc-sha256-pairwise-sub-mapper", "saml-user-attribute-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-usermodel-property-mapper", "saml-user-property-mapper", "oidc-address-mapper", "saml-user-attribute-mapper", "oidc-usermodel-attribute-mapper", "oidc-full-name-mapper", "oidc-sha256-pairwise-sub-mapper", "saml-role-list-mapper" ]
       }
     }, {
       "id" : "d3a7c704-317d-40e7-8b21-5f8f57d4f963",
@@ -1424,7 +1465,7 @@
       "subType" : "authenticated",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-usermodel-property-mapper", "oidc-sha256-pairwise-sub-mapper", "saml-user-attribute-mapper", "saml-user-property-mapper", "oidc-full-name-mapper", "oidc-address-mapper", "oidc-usermodel-attribute-mapper", "saml-role-list-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-address-mapper", "oidc-usermodel-property-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-usermodel-attribute-mapper", "oidc-full-name-mapper", "saml-user-attribute-mapper", "saml-user-property-mapper", "saml-role-list-mapper" ]
       }
     }, {
       "id" : "d63bf7eb-f8b3-426a-a4ef-f82cd9b11113",
@@ -1453,8 +1494,8 @@
           "config" : {
             "ldap.attribute" : [ "sn" ],
             "is.mandatory.in.ldap" : [ "true" ],
-            "always.read.value.from.ldap" : [ "true" ],
             "read.only" : [ "false" ],
+            "always.read.value.from.ldap" : [ "true" ],
             "user.model.attribute" : [ "lastName" ]
           }
         }, {
@@ -1477,8 +1518,8 @@
           "config" : {
             "ldap.attribute" : [ "cn" ],
             "is.mandatory.in.ldap" : [ "true" ],
-            "read.only" : [ "false" ],
             "always.read.value.from.ldap" : [ "true" ],
+            "read.only" : [ "false" ],
             "user.model.attribute" : [ "firstName" ]
           }
         }, {
@@ -1510,8 +1551,8 @@
           "config" : {
             "ldap.attribute" : [ "createTimestamp" ],
             "is.mandatory.in.ldap" : [ "false" ],
-            "read.only" : [ "true" ],
             "always.read.value.from.ldap" : [ "true" ],
+            "read.only" : [ "true" ],
             "user.model.attribute" : [ "createTimestamp" ]
           }
         }, {
@@ -1522,15 +1563,15 @@
           "config" : {
             "ldap.attribute" : [ "cn" ],
             "is.mandatory.in.ldap" : [ "true" ],
-            "read.only" : [ "false" ],
             "always.read.value.from.ldap" : [ "false" ],
+            "read.only" : [ "false" ],
             "user.model.attribute" : [ "username" ]
           }
         } ]
       },
       "config" : {
-        "pagination" : [ "true" ],
         "fullSyncPeriod" : [ "604800" ],
+        "pagination" : [ "true" ],
         "connectionTrace" : [ "false" ],
         "startTls" : [ "false" ],
         "connectionPooling" : [ "true" ],
@@ -1540,13 +1581,13 @@
         "importEnabled" : [ "true" ],
         "enabled" : [ "true" ],
         "bindCredential" : [ "admin" ],
-        "changedSyncPeriod" : [ "86400" ],
         "bindDn" : [ "CN=admin,dc=confluent,dc=io" ],
         "usernameLDAPAttribute" : [ "cn" ],
+        "changedSyncPeriod" : [ "86400" ],
         "vendor" : [ "other" ],
         "uuidLDAPAttribute" : [ "cn" ],
-        "connectionUrl" : [ "ldap://ldap:389" ],
         "allowKerberosAuthentication" : [ "false" ],
+        "connectionUrl" : [ "ldap://ldap:389" ],
         "syncRegistrations" : [ "true" ],
         "authType" : [ "simple" ],
         "krbPrincipalAttribute" : [ "krb5PrincipalName" ],
