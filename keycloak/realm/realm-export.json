@@ -246,6 +246,7 @@
         "containerId" : "50047554-93a9-49c1-bfc8-a85cfcdc689f",
         "attributes" : { }
       } ],
+      "c3_client_app" : [ ],
       "c3_sso_login" : [ ],
       "security-admin-console" : [ ],
       "127.0.0.1.nip.io" : [ ],
@@ -386,9 +387,9 @@
     "emailVerified" : false,
     "attributes" : {
       "LDAP_ENTRY_DN" : [ "cn=alice,ou=users,dc=confluent,dc=io" ],
-      "createTimestamp" : [ "20250129095010Z" ],
-      "modifyTimestamp" : [ "20250129095010Z" ],
-      "LDAP_ID" : [ "alice" ]
+      "createTimestamp" : [ "20250130082321Z" ],
+      "LDAP_ID" : [ "alice" ],
+      "modifyTimestamp" : [ "20250130082321Z" ]
     },
     "origin" : "bqkir9JRSzCqXENas57N5g",
     "createdTimestamp" : 1738099495809,
@@ -409,15 +410,29 @@
     "emailVerified" : false,
     "attributes" : {
       "LDAP_ENTRY_DN" : [ "cn=charlie,ou=users,dc=confluent,dc=io" ],
-      "LDAP_ID" : [ "chalrie" ],
-      "modifyTimestamp" : [ "20250129095010Z" ],
-      "createTimestamp" : [ "20250129095010Z" ]
+      "modifyTimestamp" : [ "20250130082321Z" ],
+      "createTimestamp" : [ "20250130082321Z" ],
+      "LDAP_ID" : [ "chalrie" ]
     },
     "origin" : "bqkir9JRSzCqXENas57N5g",
     "createdTimestamp" : 1738099495860,
     "enabled" : true,
     "totp" : false,
     "federationLink" : "bqkir9JRSzCqXENas57N5g",
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-confluent" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "1193eef1-36d7-465d-87d9-a2439c8af06b",
+    "username" : "service-account-c3_client_app",
+    "emailVerified" : false,
+    "createdTimestamp" : 1738226631287,
+    "enabled" : true,
+    "totp" : false,
+    "serviceAccountClientId" : "c3_client_app",
     "credentials" : [ ],
     "disableableCredentialTypes" : [ ],
     "requiredActions" : [ ],
@@ -432,9 +447,9 @@
     "emailVerified" : false,
     "attributes" : {
       "LDAP_ENTRY_DN" : [ "cn=superUser,ou=users,dc=confluent,dc=io" ],
-      "createTimestamp" : [ "20250129095010Z" ],
-      "LDAP_ID" : [ "superUser" ],
-      "modifyTimestamp" : [ "20250129095010Z" ]
+      "modifyTimestamp" : [ "20250130082321Z" ],
+      "createTimestamp" : [ "20250130082321Z" ],
+      "LDAP_ID" : [ "superUser" ]
     },
     "origin" : "bqkir9JRSzCqXENas57N5g",
     "createdTimestamp" : 1738099495866,
@@ -641,6 +656,122 @@
     "nodeReRegistrationTimeout" : 0,
     "defaultClientScopes" : [ ],
     "optionalClientScopes" : [ ]
+  }, {
+    "id" : "cea1c4c8-6c7f-46be-96b4-b381eb1a218c",
+    "clientId" : "c3_client_app",
+    "name" : "App for client credentials OAuth flow",
+    "description" : "",
+    "surrogateAuthRequired" : false,
+    "enabled" : true,
+    "alwaysDisplayInConsole" : false,
+    "clientAuthenticatorType" : "client-secret",
+    "secret" : "c3_client_app_secret",
+    "redirectUris" : [ ],
+    "webOrigins" : [ ],
+    "notBefore" : 0,
+    "bearerOnly" : false,
+    "consentRequired" : false,
+    "standardFlowEnabled" : false,
+    "implicitFlowEnabled" : false,
+    "directAccessGrantsEnabled" : false,
+    "serviceAccountsEnabled" : true,
+    "publicClient" : false,
+    "frontchannelLogout" : false,
+    "protocol" : "openid-connect",
+    "attributes" : {
+      "saml.force.post.binding" : "false",
+      "saml.multivalued.roles" : "false",
+      "frontchannel.logout.session.required" : "false",
+      "post.logout.redirect.uris" : "+",
+      "oauth2.device.authorization.grant.enabled" : "false",
+      "backchannel.logout.revoke.offline.tokens" : "false",
+      "saml.server.signature.keyinfo.ext" : "false",
+      "use.refresh.tokens" : "true",
+      "realm_client" : "false",
+      "oidc.ciba.grant.enabled" : "false",
+      "backchannel.logout.session.required" : "true",
+      "client_credentials.use_refresh_token" : "false",
+      "require.pushed.authorization.requests" : "false",
+      "saml.client.signature" : "false",
+      "saml.allow.ecp.flow" : "false",
+      "id.token.as.detached.signature" : "false",
+      "saml.assertion.signature" : "false",
+      "client.secret.creation.time" : "1704457045",
+      "saml.encrypt" : "false",
+      "saml.server.signature" : "false",
+      "exclude.session.state.from.auth.response" : "false",
+      "saml.artifact.binding" : "false",
+      "saml_force_name_id_format" : "false",
+      "acr.loa.map" : "{}",
+      "tls.client.certificate.bound.access.tokens" : "false",
+      "saml.authnstatement" : "false",
+      "display.on.consent.screen" : "false",
+      "token.response.type.bearer.lower-case" : "false",
+      "saml.onetimeuse.condition" : "false"
+    },
+    "authenticationFlowBindingOverrides" : { },
+    "fullScopeAllowed" : true,
+    "nodeReRegistrationTimeout" : -1,
+    "protocolMappers" : [ {
+      "id" : "6ac3d88d-556c-468d-8016-fa625631c32f",
+      "name" : "Client IP Address",
+      "protocol" : "openid-connect",
+      "protocolMapper" : "oidc-usersessionmodel-note-mapper",
+      "consentRequired" : false,
+      "config" : {
+        "user.session.note" : "clientAddress",
+        "id.token.claim" : "true",
+        "access.token.claim" : "true",
+        "claim.name" : "clientAddress",
+        "jsonType.label" : "String",
+        "userinfo.token.claim" : "true"
+      }
+    }, {
+      "id" : "9f2f268f-04ad-48d9-b668-80311a36b548",
+      "name" : "Client Host",
+      "protocol" : "openid-connect",
+      "protocolMapper" : "oidc-usersessionmodel-note-mapper",
+      "consentRequired" : false,
+      "config" : {
+        "user.session.note" : "clientHost",
+        "id.token.claim" : "true",
+        "access.token.claim" : "true",
+        "claim.name" : "clientHost",
+        "jsonType.label" : "String",
+        "userinfo.token.claim" : "true"
+      }
+    }, {
+      "id" : "84230727-ecb3-4b2b-8319-a912ee67cace",
+      "name" : "Client ID",
+      "protocol" : "openid-connect",
+      "protocolMapper" : "oidc-usersessionmodel-note-mapper",
+      "consentRequired" : false,
+      "config" : {
+        "user.session.note" : "clientId",
+        "id.token.claim" : "true",
+        "access.token.claim" : "true",
+        "claim.name" : "clientId",
+        "jsonType.label" : "String",
+        "userinfo.token.claim" : "true"
+      }
+    }, {
+      "id" : "db976a31-4c47-4a71-849d-52830fd2bf46",
+      "name" : "groups",
+      "protocol" : "openid-connect",
+      "protocolMapper" : "oidc-group-membership-mapper",
+      "consentRequired" : false,
+      "config" : {
+        "full.path" : "true",
+        "introspection.token.claim" : "true",
+        "multivalued" : "true",
+        "userinfo.token.claim" : "true",
+        "id.token.claim" : "true",
+        "access.token.claim" : "true",
+        "claim.name" : "groups"
+      }
+    } ],
+    "defaultClientScopes" : [ "web-origins", "service_account", "acr", "profile", "roles", "email" ],
+    "optionalClientScopes" : [ "address", "phone", "offline_access", "microprofile-jwt" ]
   }, {
     "id" : "fba5db22-7d0b-4503-8d3d-2918d0eab282",
     "clientId" : "c3_sso_login",
@@ -1456,7 +1587,7 @@
       "subType" : "anonymous",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-usermodel-property-mapper", "saml-user-property-mapper", "oidc-address-mapper", "saml-user-attribute-mapper", "oidc-usermodel-attribute-mapper", "oidc-full-name-mapper", "oidc-sha256-pairwise-sub-mapper", "saml-role-list-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-full-name-mapper", "oidc-address-mapper", "oidc-usermodel-property-mapper", "saml-user-property-mapper", "saml-user-attribute-mapper", "oidc-usermodel-attribute-mapper", "saml-role-list-mapper", "oidc-sha256-pairwise-sub-mapper" ]
       }
     }, {
       "id" : "d3a7c704-317d-40e7-8b21-5f8f57d4f963",
@@ -1465,7 +1596,7 @@
       "subType" : "authenticated",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-address-mapper", "oidc-usermodel-property-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-usermodel-attribute-mapper", "oidc-full-name-mapper", "saml-user-attribute-mapper", "saml-user-property-mapper", "saml-role-list-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-sha256-pairwise-sub-mapper", "oidc-full-name-mapper", "oidc-usermodel-property-mapper", "oidc-usermodel-attribute-mapper", "saml-user-property-mapper", "saml-user-attribute-mapper", "saml-role-list-mapper", "oidc-address-mapper" ]
       }
     }, {
       "id" : "d63bf7eb-f8b3-426a-a4ef-f82cd9b11113",
@@ -1506,8 +1637,8 @@
           "config" : {
             "ldap.attribute" : [ "modifyTimestamp" ],
             "is.mandatory.in.ldap" : [ "false" ],
-            "always.read.value.from.ldap" : [ "true" ],
             "read.only" : [ "true" ],
+            "always.read.value.from.ldap" : [ "true" ],
             "user.model.attribute" : [ "modifyTimestamp" ]
           }
         }, {
@@ -1518,8 +1649,8 @@
           "config" : {
             "ldap.attribute" : [ "cn" ],
             "is.mandatory.in.ldap" : [ "true" ],
-            "always.read.value.from.ldap" : [ "true" ],
             "read.only" : [ "false" ],
+            "always.read.value.from.ldap" : [ "true" ],
             "user.model.attribute" : [ "firstName" ]
           }
         }, {
@@ -1551,8 +1682,8 @@
           "config" : {
             "ldap.attribute" : [ "createTimestamp" ],
             "is.mandatory.in.ldap" : [ "false" ],
-            "always.read.value.from.ldap" : [ "true" ],
             "read.only" : [ "true" ],
+            "always.read.value.from.ldap" : [ "true" ],
             "user.model.attribute" : [ "createTimestamp" ]
           }
         }, {
@@ -1563,8 +1694,8 @@
           "config" : {
             "ldap.attribute" : [ "cn" ],
             "is.mandatory.in.ldap" : [ "true" ],
-            "always.read.value.from.ldap" : [ "false" ],
             "read.only" : [ "false" ],
+            "always.read.value.from.ldap" : [ "false" ],
             "user.model.attribute" : [ "username" ]
           }
         } ]
@@ -1580,14 +1711,14 @@
         "useKerberosForPasswordAuthentication" : [ "false" ],
         "importEnabled" : [ "true" ],
         "enabled" : [ "true" ],
+        "usernameLDAPAttribute" : [ "cn" ],
         "bindCredential" : [ "admin" ],
         "bindDn" : [ "CN=admin,dc=confluent,dc=io" ],
-        "usernameLDAPAttribute" : [ "cn" ],
         "changedSyncPeriod" : [ "86400" ],
         "vendor" : [ "other" ],
         "uuidLDAPAttribute" : [ "cn" ],
-        "allowKerberosAuthentication" : [ "false" ],
         "connectionUrl" : [ "ldap://ldap:389" ],
+        "allowKerberosAuthentication" : [ "false" ],
         "syncRegistrations" : [ "true" ],
         "authType" : [ "simple" ],
         "krbPrincipalAttribute" : [ "krb5PrincipalName" ],
