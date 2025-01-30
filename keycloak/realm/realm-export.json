@@ -388,9 +388,9 @@
     "emailVerified" : false,
     "attributes" : {
       "LDAP_ENTRY_DN" : [ "cn=alice,ou=users,dc=confluent,dc=io" ],
+      "createTimestamp" : [ "20250130132617Z" ],
       "LDAP_ID" : [ "alice" ],
-      "modifyTimestamp" : [ "20250130124501Z" ],
-      "createTimestamp" : [ "20250130124501Z" ]
+      "modifyTimestamp" : [ "20250130132617Z" ]
     },
     "origin" : "bqkir9JRSzCqXENas57N5g",
     "createdTimestamp" : 1738099495809,
@@ -412,9 +412,9 @@
     "emailVerified" : false,
     "attributes" : {
       "LDAP_ENTRY_DN" : [ "cn=charlie,ou=users,dc=confluent,dc=io" ],
-      "createTimestamp" : [ "20250130124501Z" ],
-      "modifyTimestamp" : [ "20250130124501Z" ],
-      "LDAP_ID" : [ "chalrie" ]
+      "LDAP_ID" : [ "chalrie" ],
+      "createTimestamp" : [ "20250130132617Z" ],
+      "modifyTimestamp" : [ "20250130132617Z" ]
     },
     "origin" : "bqkir9JRSzCqXENas57N5g",
     "createdTimestamp" : 1738099495860,
@@ -450,9 +450,9 @@
     "emailVerified" : false,
     "attributes" : {
       "LDAP_ENTRY_DN" : [ "cn=superUser,ou=users,dc=confluent,dc=io" ],
-      "createTimestamp" : [ "20250130124501Z" ],
+      "modifyTimestamp" : [ "20250130132617Z" ],
       "LDAP_ID" : [ "superUser" ],
-      "modifyTimestamp" : [ "20250130124501Z" ]
+      "createTimestamp" : [ "20250130132617Z" ]
     },
     "origin" : "bqkir9JRSzCqXENas57N5g",
     "createdTimestamp" : 1738099495866,
@@ -788,7 +788,7 @@
     "alwaysDisplayInConsole" : false,
     "clientAuthenticatorType" : "client-secret",
     "secret" : "tNaIzc3nd3MjHZXmvHLq3ya5mUB9HDuf",
-    "redirectUris" : [ "http://127.0.0.1:9021/api/metadata/security/1.0/oidc/authorization-code/callback", "http://192.168.10.33:9021/api/metadata/security/1.0/oidc/authorization-code/callback", "http://control-center:9021/api/metadata/security/1.0/oidc/authorization-code/callback", "https://192.168.10.33:9021/api/metadata/security/1.0/oidc/authorization-code/callback", "http://localhost:9021/api/metadata/security/1.0/oidc/authorization-code/callback" ],
+    "redirectUris" : [ "https://192.168.33.10:9021/api/metadata/security/1.0/oidc/authorization-code/callback", "http://127.0.0.1:9021/api/metadata/security/1.0/oidc/authorization-code/callback", "http://control-center:9021/api/metadata/security/1.0/oidc/authorization-code/callback", "http://192.168.33.10:9021/api/metadata/security/1.0/oidc/authorization-code/callback", "http://localhost:9021/api/metadata/security/1.0/oidc/authorization-code/callback" ],
     "webOrigins" : [ "/*" ],
     "notBefore" : 0,
     "bearerOnly" : false,
@@ -1592,7 +1592,7 @@
       "subType" : "anonymous",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-sha256-pairwise-sub-mapper", "saml-role-list-mapper", "oidc-address-mapper", "saml-user-property-mapper", "saml-user-attribute-mapper", "oidc-full-name-mapper", "oidc-usermodel-attribute-mapper", "oidc-usermodel-property-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-sha256-pairwise-sub-mapper", "oidc-address-mapper", "oidc-usermodel-attribute-mapper", "saml-user-property-mapper", "saml-role-list-mapper", "oidc-full-name-mapper", "saml-user-attribute-mapper", "oidc-usermodel-property-mapper" ]
       }
     }, {
       "id" : "d3a7c704-317d-40e7-8b21-5f8f57d4f963",
@@ -1601,7 +1601,7 @@
       "subType" : "authenticated",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "saml-user-property-mapper", "oidc-address-mapper", "oidc-full-name-mapper", "saml-role-list-mapper", "oidc-sha256-pairwise-sub-mapper", "saml-user-attribute-mapper", "oidc-usermodel-property-mapper", "oidc-usermodel-attribute-mapper" ]
+        "allowed-protocol-mapper-types" : [ "saml-role-list-mapper", "saml-user-attribute-mapper", "oidc-address-mapper", "oidc-usermodel-property-mapper", "oidc-usermodel-attribute-mapper", "saml-user-property-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-full-name-mapper" ]
       }
     }, {
       "id" : "d63bf7eb-f8b3-426a-a4ef-f82cd9b11113",
@@ -1630,8 +1630,8 @@
           "config" : {
             "ldap.attribute" : [ "sn" ],
             "is.mandatory.in.ldap" : [ "true" ],
-            "always.read.value.from.ldap" : [ "true" ],
             "read.only" : [ "false" ],
+            "always.read.value.from.ldap" : [ "true" ],
             "user.model.attribute" : [ "lastName" ]
           }
         }, {
@@ -1642,8 +1642,8 @@
           "config" : {
             "ldap.attribute" : [ "modifyTimestamp" ],
             "is.mandatory.in.ldap" : [ "false" ],
-            "read.only" : [ "true" ],
             "always.read.value.from.ldap" : [ "true" ],
+            "read.only" : [ "true" ],
             "user.model.attribute" : [ "modifyTimestamp" ]
           }
         }, {
@@ -1665,8 +1665,8 @@
           "subComponents" : { },
           "config" : {
             "ldap.attribute" : [ "mail" ],
-            "is.mandatory.in.ldap" : [ "false" ],
             "attribute.force.default" : [ "false" ],
+            "is.mandatory.in.ldap" : [ "false" ],
             "is.binary.attribute" : [ "false" ],
             "read.only" : [ "false" ],
             "always.read.value.from.ldap" : [ "false" ],
@@ -1713,32 +1713,32 @@
           "config" : {
             "ldap.attribute" : [ "cn" ],
             "is.mandatory.in.ldap" : [ "true" ],
-            "read.only" : [ "false" ],
             "always.read.value.from.ldap" : [ "false" ],
+            "read.only" : [ "false" ],
             "user.model.attribute" : [ "username" ]
           }
         } ]
       },
       "config" : {
-        "pagination" : [ "true" ],
         "fullSyncPeriod" : [ "604800" ],
+        "pagination" : [ "true" ],
         "connectionTrace" : [ "false" ],
         "startTls" : [ "false" ],
-        "usersDn" : [ "ou=users,dc=confluent,dc=io" ],
         "connectionPooling" : [ "true" ],
+        "usersDn" : [ "ou=users,dc=confluent,dc=io" ],
         "cachePolicy" : [ "DEFAULT" ],
         "useKerberosForPasswordAuthentication" : [ "false" ],
         "importEnabled" : [ "true" ],
         "enabled" : [ "true" ],
-        "bindCredential" : [ "admin" ],
         "bindDn" : [ "CN=admin,dc=confluent,dc=io" ],
         "changedSyncPeriod" : [ "86400" ],
         "usernameLDAPAttribute" : [ "cn" ],
+        "bindCredential" : [ "admin" ],
         "lastSync" : [ "1738241150" ],
         "vendor" : [ "other" ],
         "uuidLDAPAttribute" : [ "cn" ],
-        "allowKerberosAuthentication" : [ "false" ],
         "connectionUrl" : [ "ldap://ldap:389" ],
+        "allowKerberosAuthentication" : [ "false" ],
         "syncRegistrations" : [ "true" ],
         "authType" : [ "simple" ],
         "krbPrincipalAttribute" : [ "krb5PrincipalName" ],
