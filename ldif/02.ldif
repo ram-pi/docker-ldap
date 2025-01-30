@@ -1,20 +1,26 @@
 dn: cn=alice,ou=users,dc=confluent,dc=io
 objectClass: person
 objectClass: top
+objectclass: inetOrgPerson
 cn: alice
 sn: alice
+mail: alice@confluent.io
 userPassword: alice-secret
 
 dn: cn=charlie,ou=users,dc=confluent,dc=io
 objectClass: person
 objectClass: top
+objectclass: inetOrgPerson
 cn: chalrie
 sn: chalrie
+mail: charlie@confluent.io
 userPassword: chalrie-secret
 
 dn: cn=superUser,ou=users,dc=confluent,dc=io
 objectClass: person
 objectClass: top
+objectclass: inetOrgPerson
 cn: superUser
 sn: superUser
+mail: superuser@confluent.io
 userPassword: superUser
